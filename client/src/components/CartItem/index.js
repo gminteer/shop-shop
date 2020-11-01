@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+
 import { removeOne, updateQuantity } from '../../slices/cart';
 import { idbPromise } from '../../utils/helpers';
 

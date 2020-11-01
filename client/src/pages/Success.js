@@ -16,16 +16,17 @@ function Success() {
       if (products.length) {
         const { data } = await addOrder({ variables: { products } });
         const productData = data.addOrder.products;
-
         productData.forEach((item) => {
           idbPromise('cart', 'delete', item);
         });
       }
+
       setTimeout(() => window.location.assign('/'), 1000 * 3); // 3s
     }
 
     saveOrder();
   }, [addOrder]);
+
   return (
     <div>
       <Jumbotron>
